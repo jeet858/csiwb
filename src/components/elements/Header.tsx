@@ -32,8 +32,8 @@ const Header: React.FunctionComponent = () => {
           <div className="h-[50%] w-full bg-gray-50 sm:hidden md:hidden lg:block"></div>
         </div>
         <div className="flex h-[50%] w-full items-center justify-evenly  sm:justify-between md:justify-between lg:items-center lg:justify-evenly">
-          <div className="flex h-full w-[8%] items-center justify-center ">
-            <img src="/logo.png" alt="" className="h-[80%] w-[70%]" />
+          <div className="flex h-full w-[8%] items-center justify-center sm:flex md:flex lg:hidden">
+          <Image src={logo} alt="" className="h-[80%] w-[80%]" />
           </div>
           <div className="flex h-full w-full  items-center justify-evenly sm:hidden sm:w-[90%] md:hidden md:w-[90%] lg:flex lg:w-full">
             {HeaderArr.map((item, index) => (
@@ -48,7 +48,7 @@ const Header: React.FunctionComponent = () => {
               Registration
             </button>
           </div>
-          <div className="hidden p-[2%] " onClick={handelMenu}>
+          <div className="lg:hidden sm:block md:block hidden p-[2%] " onClick={handelMenu}>
             <SlMenu />
           </div>
         </div>
