@@ -1,33 +1,51 @@
-import React from 'react';
-import b from "../../../images/Beach-House.jpeg"
-import Image from 'next/image';
+import React from "react";
+import b from "../../../images/Beach-House.jpeg";
+import Image from "next/image";
 
 const SubmitPoster: React.FunctionComponent = () => {
   return (
     <div className="w-screen bg-white p-6">
-      <h2 className="text-2xl font-semibold text-center text-blue-700 mb-2">Submit E-Poster</h2>
-      <div className="border-t-2 border-red-600 w-12 mx-auto mb-6"></div>
-      <div className="grid grid-cols-2 gap-4 mb-6">
-        <div className="relative">
-          <Image src={b} alt="Placeholder" className="w-full h-40 object-cover rounded-md" />
-          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-lg">Place Holder</div>
+      <h2 className="mb-2 text-center text-2xl font-semibold text-blue-700">
+        Submit E-Poster
+      </h2>
+      <div className="mx-auto mb-6 w-12 border-t-2 border-red-600"></div>
+      <div className="mb-6 flex flex-col">
+        <div className="relative flex flex-row">
+        <Image
+            src={b}
+            alt="Placeholder"
+            className="h-40 z-0 relative w-full m-[2%] rounded-md object-cover"
+          />
+          <Image
+            src={b}
+            alt="Placeholder"
+            className="h-40 z-0 relative w-full m-[2%] rounded-md object-cover"
+          />
+          <div className="z-1 w-full h-[39px] absolute self-center flex justify-center justify-self-center">
+            <div className="w-[90%] h-full justify-center font-medium text-[16px]/[19.2px] flex items-center bg-[#ffffffb2]">Place Holder</div>
+          </div>
         </div>
-        <div className="relative">
-        <Image src={b} alt="Placeholder" className="w-full h-40 object-cover rounded-md" />
-          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-lg">Place Holder</div>
-        </div>
-        <div className="relative">
-        <Image src={b} alt="Placeholder" className="w-full h-40 object-cover rounded-md" />
-          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-lg">Place Holder</div>
-        </div>
-        <div className="relative">
-        <Image src={b} alt="Placeholder" className="w-full h-40 object-cover rounded-md" />
-          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-lg">Place Holder</div>
+        <div className="relative flex flex-row">
+          <Image
+            src={b}
+            alt="Placeholder"
+            className="h-40 z-0 relative w-full m-[2%] rounded-md object-cover"
+          />
+          <Image
+            src={b}
+            alt="Placeholder"
+            className="h-40 z-0 relative w-full m-[2%] rounded-md object-cover"
+          />
+          <div className="z-1 w-full h-[39px] absolute self-center flex justify-center justify-self-center">
+            <div className="w-[90%] h-full justify-center font-medium text-[16px]/[19.2px] flex items-center bg-[#ffffffb2]">Place Holder</div>
+          </div>
         </div>
       </div>
-      <button className="w-full py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700">Upload Poster</button>
+      <button className="w-full rounded-md bg-blue-600 py-2 font-semibold text-white hover:bg-blue-700">
+        Upload Poster
+      </button>
     </div>
   );
-}
+};
 
 export default SubmitPoster;

@@ -8,15 +8,15 @@ const SocialLinks: React.FC = () => {
     <div className="p-4 bg-gray-100">
       <h2 className="text-gray-500 font-semibold mb-4">Get In Touch</h2>
       <ul>
-        <li className="flex items-center mb-2">
+        <li className="flex items-center mb-2 space-x-[1%]">
             <IoLogoFacebook className='text-blue-600'/>
           <a href="https://www.facebook.com" className="text-blue-600">Facebook</a>
         </li>
-        <li className="flex items-center mb-2">
+        <li className="flex items-center mb-2 space-x-[1%]">
             <FaSquareXTwitter  className='text-blue-600'/>
           <a href="https://www.twitter.com" className="text-blue-600">Tweeter</a>
         </li>
-        <li className="flex items-center mb-2">
+        <li className="flex items-center mb-2 space-x-[1%]">
             <FaInstagram  className='text-blue-600'/>
           <a href="https://www.instagram.com" className="text-blue-600">Instagram</a>
         </li>

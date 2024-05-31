@@ -17,63 +17,43 @@ const Header: React.FunctionComponent = () => {
     { name: "Contact Us", link: "/" },
   ];
 
-  const handelMenu = () => {
-    setMenu(!menu);
-  };
+  // const handelMenu = () => {
+  //   setMenu(!menu);
+  // };
 
   return (
-    <div className="relative flex h-40 w-full flex-row sm:h-20 md:h-20 lg:h-40">
-      <div className="flex h-full w-[10%] items-center justify-center sm:hidden md:hidden lg:flex">
-        <Image src={logo} alt="" className="h-[80%] w-[80%]" />
+    <header className="flex w-screen h-20 items-center justify-center bg-[#FFFF]">
+      <div className="w-full flex justify-between m-[1%]">
+      <div className="flex items-center space-x-4">
+        <Image src={logo} alt="CSI West Bengal" className="w-10 h-10" />
+        <span className="text-xl font-bold text-blue-700">CSI West Bengal</span>
       </div>
-      <div className="h-full w-[90%] sm:w-screen md:w-screen lg:w-[90%]">
-        <div className="h-[50%] w-full ">
-          <div className="h-[50%] w-full bg-sky-600 sm:h-full md:h-full lg:h-[50%]"></div>
-          <div className="h-[50%] w-full bg-gray-50 sm:hidden md:hidden lg:block"></div>
-        </div>
-        <div className="flex h-[50%] w-full items-center justify-evenly  sm:justify-between md:justify-between lg:items-center lg:justify-evenly">
-          <div className="flex h-full w-[8%] items-center justify-center sm:flex md:flex lg:hidden">
-          <Image src={logo} alt="" className="h-[80%] w-[80%]" />
-          </div>
-          <div className="flex h-full w-full  items-center justify-evenly sm:hidden sm:w-[90%] md:hidden md:w-[90%] lg:flex lg:w-full">
-            {HeaderArr.map((item, index) => (
-              <Link key={index} href={item.link}>
-                {item.name}
-              </Link>
+      <div className="flex items-center">
+        <button 
+          className="text-gray-600 hover:text-blue-700 focus:outline-none" 
+          onClick={() => setMenu(!menu)}
+        >
+          <SlMenu/>
+        </button>
+      </div>
+      {menu && (
+        <nav className="absolute w-full z-10 top-[8%] bg-white">
+          <ul className="flex flex-col">
+            {HeaderArr.map((item,index) => (
+              <li key={index} className="h-16">
+                <Link 
+                  href={item.link} 
+                  className="block px-4 py-2 text-gray-600 hover:bg-blue-700 hover:text-white"
+                >
+                  {item.name}
+                </Link>
+              </li>
             ))}
-            <button className="rounded-sm bg-sky-600 px-[1%] py-[0.5%] font-bold uppercase text-white">
-              Login
-            </button>
-            <button className="rounded-sm bg-sky-600 px-[1%] py-[0.5%] font-bold uppercase text-white">
-              Registration
-            </button>
-          </div>
-          <div className="lg:hidden sm:block md:block hidden p-[2%] " onClick={handelMenu}>
-            <SlMenu />
-          </div>
-        </div>
+          </ul>
+        </nav>
+      )}
       </div>
-      <div
-        className={`absolute z-[100] h-fit w-screen flex-col bg-white ${menu ? "flex" : "hidden"}  top-[106%]`}
-      >
-        {HeaderArr.map((item, index) => (
-          // console.log(item.link)
-          <Link
-            key={index}
-            className="flex h-10 w-screen items-center pl-[2%] hover:text-sky-600"
-            href={item.link}
-          >
-            {item.name}
-          </Link>
-        ))}
-        <button className="flex h-10 w-screen items-center bg-sky-600 pl-[2%] text-start font-bold uppercase text-white">
-          Login
-        </button>
-        <button className="flex h-10 w-screen items-center bg-sky-600 pl-[2%] text-start font-bold uppercase text-white">
-          registration
-        </button>
-      </div>
-    </div>
+    </header>
   );
 };
 
