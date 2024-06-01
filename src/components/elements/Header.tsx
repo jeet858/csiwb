@@ -44,6 +44,7 @@ const Header: React.FunctionComponent = () => {
               {HeaderArr.map((item, index) => (
                 <li key={index} className="h-16">
                   <Link
+                    key={index}
                     href={item.link}
                     className="block px-4 py-2 text-gray-600 hover:bg-blue-700 hover:text-white"
                   >

@@ -12,7 +12,7 @@ const OrganizingCommittee: React.FunctionComponent = () => {
           </div>
           <div className="mb-8 flex h-1 w-20 self-center rounded-full bg-[#DA2128]"></div>
         </div>
-        <div className="flex w-full items-center justify-center bg-[#303791] sm:h-fit md:flex-shrink-0 lg:h-fit">
+        <div className="flex w-full items-center justify-center bg-[#303791] sm:h-96 md:h-fit md:flex-shrink-0 lg:h-fit">
           <Image
             className="h-full w-full object-cover"
             src={dr}

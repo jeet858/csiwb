@@ -7,13 +7,13 @@ const Footer: React.FunctionComponent = () => {
         <div className="flex h-60 w-full flex-col bg-[#1849C6] p-6">
           <div className="flex h-full w-full flex-col justify-start ">
             <h2 className="mb-4 text-lg font-bold">Information</h2>
-            <div className="grid w-full grid-cols-2 grid-rows-3 ">
+            <div className="grid h-full w-full grid-cols-2 grid-rows-3 font-light">
               <p>CSI WB and Committees</p>
-              <p>Who We Are</p>
+              <p className="flex justify-end ">Who We Are</p>
               <p>Who Are we</p>
-              <p>Our Offices</p>
+              <p className="flex justify-end ">Our Offices</p>
               <p>CSI Policies</p>
-              <p>Terms & Conditions</p>
+              <p className="flex justify-end ">Terms & Conditions</p>
             </div>
           </div>
         </div>
