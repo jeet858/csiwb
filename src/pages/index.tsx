@@ -9,19 +9,27 @@ import SocialLinks from "~/components/elements/SocialLinks";
 import MainPageTemplate from "~/components/templates/MainPageTemplate";
 
 const index: React.FunctionComponent = () => {
-  const transitionInterval = 5000;
-  const themeColors = ["#1849C6", "#DA0D6A"];
-  const [themeColor, setThemeColor] = useState(themeColors[0]);
-  useEffect(() => {
-    setTimeout(() => {
-      const index = themeColors.indexOf(themeColor as string);
-      setThemeColor(themeColors[(index + 1) % themeColors.length]);
-    }, transitionInterval);
-  }, [transitionInterval, themeColors]);
+  // const transitionInterval = 5000;
+  // const themeColors = ["#1849C6", "#DA0D6A"];
+  // const [themeColor, setThemeColor] = useState(themeColors[0]);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     const index = themeColors.indexOf(themeColor as string);
+  //     setThemeColor(themeColors[(index + 1) % themeColors.length]);
+  //   }, transitionInterval);
+  // }, [transitionInterval, themeColors]);
+  const [themeColor, setThemeColor] = useState<string>("");
+
+  const handleCurrentItemChange = (color: string) => {
+    setThemeColor(color);
+  };
   return (
     <div>
       <MainPageTemplate>
-        <Banner transitionInterval={5000} />
+        <Banner
+          transitionInterval={5000}
+          onCurrentItemChange={handleCurrentItemChange}
+        />
         <AboutUs themeColor={themeColor as string} />
         <ScientificProgram themeColor={themeColor as string} />
         <OrganizingCommittee />

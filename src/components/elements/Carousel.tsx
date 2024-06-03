@@ -5,12 +5,16 @@ import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa6";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 interface CarouselProps {
-  items: StaticImageData[];
+  items: {
+    img: StaticImageData;
+    themeColor?: string;
+  }[];
   autoPlay: boolean;
   autoPlayInterval?: number;
   indicator: boolean;
   arrows: boolean;
   drag?: boolean;
+  onCurrentItemChange?: (themeColor: string) => void; //this prop returns themecolor of the current item which is in display
 }
 
 const Carousel: React.FC<CarouselProps> = ({
@@ -20,6 +24,7 @@ const Carousel: React.FC<CarouselProps> = ({
   indicator,
   arrows,
   drag = true,
+  onCurrentItemChange,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -31,7 +36,11 @@ const Carousel: React.FC<CarouselProps> = ({
   useEffect(() => {
     setCurrentTranslate(-currentIndex * 100);
     setPrevTranslate(-currentIndex * 100);
-  }, [currentIndex]);
+    const currentItem = items[currentIndex];
+    if (currentItem && currentItem.themeColor && onCurrentItemChange) {
+      onCurrentItemChange(currentItem.themeColor);
+    }
+  }, [currentIndex, items, onCurrentItemChange]);
 
   useEffect(() => {
     if (autoPlay && !isDragging) {
@@ -102,7 +111,7 @@ const Carousel: React.FC<CarouselProps> = ({
           {items.map((item, index) => (
             <Image
               key={index}
-              src={item}
+              src={item.img}
               alt=""
               className={`${index === currentIndex ? "animate-fade" : ""} flex h-full min-w-full items-center justify-center self-center `}
             />

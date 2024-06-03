@@ -1,16 +1,32 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import banner from "../../../images/banner.png";
 import banner2 from "../../../images/banner2.png";
 
 import Carousel from "./Carousel";
 interface BannerPops {
   transitionInterval: number;
+  onCurrentItemChange: (themeColor: string) => void;
 }
 const Banner: React.FunctionComponent<BannerPops> = ({
   transitionInterval,
+  onCurrentItemChange,
 }) => {
-  const items = [banner, banner2];
+  const items = [
+    { img: banner, themeColor: "#1849C6" },
+    { img: banner2, themeColor: "#DA0D6A" },
+  ];
+  const [currentItem, setCurrentItem] = useState<string>(
+    items[0]?.themeColor as string,
+  );
+
+  const handleCurrentItemChange = (item: string) => {
+    setCurrentItem(item);
+  };
+  useEffect(() => {
+    onCurrentItemChange(currentItem);
+  }, [currentItem, onCurrentItemChange]);
+  // console.log(currentItem);
   return (
     <div>
       <Carousel
@@ -19,7 +35,8 @@ const Banner: React.FunctionComponent<BannerPops> = ({
         autoPlayInterval={transitionInterval}
         indicator={false}
         arrows={false}
-        drag={false}
+        drag={true}
+        onCurrentItemChange={handleCurrentItemChange}
       />
     </div>
   );
