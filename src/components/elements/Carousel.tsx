@@ -37,7 +37,7 @@ const Carousel: React.FC<CarouselProps> = ({
     setCurrentTranslate(-currentIndex * 100);
     setPrevTranslate(-currentIndex * 100);
     const currentItem = items[currentIndex];
-    if (currentItem && currentItem.themeColor && onCurrentItemChange) {
+    if (currentItem?.themeColor && onCurrentItemChange) {
       onCurrentItemChange(currentItem.themeColor);
     }
   }, [currentIndex, items, onCurrentItemChange]);
@@ -133,17 +133,40 @@ const Carousel: React.FC<CarouselProps> = ({
             <MdKeyboardArrowRight className="h-8 w-8" />
           </button>
         ) : null}
-        {indicator ? (
+        {/* {indicator ? (
           <div className="relative bottom-4 left-1/2 z-20 mt-8 flex w-full -translate-x-1/2 transform justify-center space-x-2 self-center">
             {items.map((_, index) => (
               <span
                 key={index}
                 className={`h-3 w-3 rounded-full  ${
-                  index === currentIndex ? "bg-[#DA2128]" : "bg-[#D9D9D9]"
+                  index === currentIndex ? "bg-[#7C0202]" : "bg-[#D9D9D9]"
                 }`}
                 onClick={() => goToIndex(index)}
               ></span>
             ))}
+          </div>
+        ) : null} */}
+        {indicator ? (
+          <div className="relative bottom-4 left-1/2 z-20 mt-8 flex w-full -translate-x-1/2 transform justify-center space-x-2 self-center">
+            {Array.from({ length: currentIndex }, (_, index) => (
+              <span
+                key={index}
+                className={`h-2 w-2 rounded-full bg-[#7C0202] `}
+                onClick={() => goToIndex(index)}
+              ></span>
+            ))}
+            {currentIndex + 1 !== items.length ? (
+              <div
+                className=" h-2 rounded-xl bg-[#7C0202]"
+                style={{ width: `${(items.length - currentIndex) * 15}px` }}
+              ></div>
+            ) : (
+              <div
+                // key={index}
+                className={`h-2 w-2 rounded-full bg-[#7C0202] `}
+                // onClick={() => goToIndex(index)}
+              ></div>
+            )}
           </div>
         ) : null}
       </div>

@@ -8,7 +8,7 @@ import ScientificProgram from "~/components/elements/ScientificProgram";
 import SocialLinks from "~/components/elements/SocialLinks";
 import MainPageTemplate from "~/components/templates/MainPageTemplate";
 
-const index: React.FunctionComponent = () => {
+const index = () => {
   // const transitionInterval = 5000;
   // const themeColors = ["#1849C6", "#DA0D6A"];
   // const [themeColor, setThemeColor] = useState(themeColors[0]);
@@ -30,8 +30,8 @@ const index: React.FunctionComponent = () => {
           transitionInterval={5000}
           onCurrentItemChange={handleCurrentItemChange}
         />
-        <AboutUs themeColor={themeColor as string} />
-        <ScientificProgram themeColor={themeColor as string} />
+        <AboutUs themeColor={themeColor} />
+        <ScientificProgram themeColor={themeColor} />
         <OrganizingCommittee />
         <EPoster />
         <SocialLinks />

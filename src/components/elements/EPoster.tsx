@@ -1,14 +1,16 @@
 import React from "react";
 import b from "../../../images/Beach-House.jpeg";
+import eposter from "../../../images/eposter-heading.png";
 import Image from "next/image";
 
 const SubmitPoster: React.FunctionComponent = () => {
   return (
     <div className="flex w-full flex-col bg-white py-6">
-      <h2 className="mb-2 text-center text-2xl font-semibold text-blue-700">
+      {/* <h2 className="mb-2 text-center text-2xl font-semibold text-blue-700">
         Submit E-Poster
       </h2>
-      <div className="mb-4 flex h-1 w-20 self-center rounded-full bg-[#DA2128]"></div>
+      <div className="mb-4 flex h-1 w-20 self-center rounded-full bg-[#DA2128]"></div> */}
+      <Image src={eposter} alt="Submit E-Poster" className="self-center" />
       <div className="mb-6 flex flex-col">
         <div className="relative flex flex-row">
           <div className="flex w-full justify-evenly">
@@ -51,7 +53,7 @@ const SubmitPoster: React.FunctionComponent = () => {
           </div>
         </div>
       </div>
-      <button className="w-60 self-center rounded-md bg-blue-600 py-2 font-semibold text-white hover:bg-blue-700">
+      <button className="w-60 self-center rounded-md bg-[#5F0404] py-2 font-semibold text-white hover:bg-blue-700">
         Upload Poster
       </button>
     </div>
