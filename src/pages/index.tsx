@@ -6,6 +6,7 @@ import EPoster from "~/components/elements/EPoster";
 import OrganizingCommittee from "~/components/elements/OrganizingCommittee";
 import ScientificProgram from "~/components/elements/ScientificProgram";
 import SocialLinks from "~/components/elements/SocialLinks";
+import Updates from "~/components/elements/Updates";
 import MainPageTemplate from "~/components/templates/MainPageTemplate";
 
 const index = () => {
@@ -34,6 +35,7 @@ const index = () => {
         <ScientificProgram themeColor={themeColor} />
         <OrganizingCommittee />
         <EPoster />
+        <Updates />
         <SocialLinks />
       </MainPageTemplate>
     </div>

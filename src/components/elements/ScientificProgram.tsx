@@ -37,6 +37,7 @@ const ScientificProgram: React.FunctionComponent<ScientificProgramProps> = ({
         autoPlay={false}
         arrows={true}
         drag={true}
+        indicatorColor="#7C0202"
       />
     </div>
   );

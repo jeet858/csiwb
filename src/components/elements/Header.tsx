@@ -24,12 +24,11 @@ const Header: React.FunctionComponent = () => {
   return (
     <header className="absolute z-10 flex h-20 w-full items-center justify-center bg-[#FFFF]">
       <div className="m-[1%] flex w-full justify-between">
-        <div className="flex items-center space-x-4">
-          <Image src={logo} alt="CSI West Bengal" className="h-16 w-16" />
-          <span className="text-xl font-bold text-blue-700">
-            CSI West Bengal
-          </span>
-        </div>
+        <Image src={logo} alt="CSI West Bengal" className="h-16 w-16" />
+        <span className="self-center font-sans text-xl font-bold text-[#6B2323]">
+          CSI West Bengal
+        </span>
+
         <div className="flex items-center">
           <button
             className="text-gray-600  focus:outline-none"

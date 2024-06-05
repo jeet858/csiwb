@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg {
+  background-image: url("../../images/bg.png");
+  background-size: cover; /* This will make the background cover the entire area */
+  background-repeat: no-repeat; /* This will prevent the image from repeating */
+  background-position: center; /* This will center the background image */
+}
+.eposter-bg {
+  background-image: url("../../images/eposter-bg.png");
+  background-size: cover; /* This will make the background cover the entire area */
+  background-repeat: no-repeat; /* This will prevent the image from repeating */
+  background-position: center; /* This will center the background image */
+}

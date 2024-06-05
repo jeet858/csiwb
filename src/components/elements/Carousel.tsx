@@ -14,6 +14,7 @@ interface CarouselProps {
   indicator: boolean;
   arrows: boolean;
   drag?: boolean;
+  indicatorColor: string;
   onCurrentItemChange?: (themeColor: string) => void; //this prop returns themecolor of the current item which is in display
 }
 
@@ -24,6 +25,7 @@ const Carousel: React.FC<CarouselProps> = ({
   indicator,
   arrows,
   drag = true,
+  indicatorColor,
   onCurrentItemChange,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -148,25 +150,31 @@ const Carousel: React.FC<CarouselProps> = ({
         ) : null} */}
         {indicator ? (
           <div className="relative bottom-4 left-1/2 z-20 mt-8 flex w-full -translate-x-1/2 transform justify-center space-x-2 self-center">
-            {Array.from({ length: currentIndex }, (_, index) => (
-              <span
-                key={index}
-                className={`h-2 w-2 rounded-full bg-[#7C0202] `}
-                onClick={() => goToIndex(index)}
-              ></span>
-            ))}
-            {currentIndex + 1 !== items.length ? (
-              <div
-                className=" h-2 rounded-xl bg-[#7C0202]"
-                style={{ width: `${(items.length - currentIndex) * 15}px` }}
-              ></div>
-            ) : (
-              <div
-                // key={index}
-                className={`h-2 w-2 rounded-full bg-[#7C0202] `}
-                // onClick={() => goToIndex(index)}
-              ></div>
+            {Array.from(
+              {
+                length:
+                  currentIndex === items.length
+                    ? currentIndex - 1
+                    : currentIndex + 1,
+              },
+              (_, index) => (
+                <span
+                  key={index}
+                  className={`h-2 w-2 rounded-full  `}
+                  onClick={() => goToIndex(index)}
+                  style={{ backgroundColor: indicatorColor }}
+                ></span>
+              ),
             )}
+
+            <div
+              className=" h-2 rounded-xl "
+              style={{
+                width: `${(items.length - currentIndex - 1) * 15}px`,
+                display: `${currentIndex + 1 !== items.length ? "" : "none"}`,
+                backgroundColor: indicatorColor,
+              }}
+            ></div>
           </div>
         ) : null}
       </div>

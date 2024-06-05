@@ -35,6 +35,7 @@ const Banner: React.FunctionComponent<BannerPops> = ({
         indicator={false}
         arrows={false}
         drag={true}
+        indicatorColor="#7C0202"
         onCurrentItemChange={handleCurrentItemChange}
       />
     </div>

@@ -16,6 +16,7 @@ const OrganizingCommittee: React.FunctionComponent = () => {
         </div> */}
         <div className="flex w-full items-center justify-center  sm:h-96 md:h-fit md:flex-shrink-0 lg:h-fit">
           <Carousel
+            indicatorColor=""
             items={caraouserItems}
             arrows={false}
             indicator={true}
