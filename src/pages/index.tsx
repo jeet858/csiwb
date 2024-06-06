@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AboutUs from "~/components/elements/AboutUs";
 import Banner from "~/components/elements/Banner";
 import Carousel from "~/components/elements/Carousel";
@@ -6,18 +6,36 @@ import EPoster from "~/components/elements/EPoster";
 import OrganizingCommittee from "~/components/elements/OrganizingCommittee";
 import ScientificProgram from "~/components/elements/ScientificProgram";
 import SocialLinks from "~/components/elements/SocialLinks";
+import Updates from "~/components/elements/Updates";
 import MainPageTemplate from "~/components/templates/MainPageTemplate";
 
-const index: React.FunctionComponent = () => {
-  const items = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"];
+const index = () => {
+  // const transitionInterval = 5000;
+  // const themeColors = ["#1849C6", "#DA0D6A"];
+  // const [themeColor, setThemeColor] = useState(themeColors[0]);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     const index = themeColors.indexOf(themeColor as string);
+  //     setThemeColor(themeColors[(index + 1) % themeColors.length]);
+  //   }, transitionInterval);
+  // }, [transitionInterval, themeColors]);
+  const [themeColor, setThemeColor] = useState<string>("");
+
+  const handleCurrentItemChange = (color: string) => {
+    setThemeColor(color);
+  };
   return (
     <div>
       <MainPageTemplate>
-        <Banner />
-        <AboutUs />
-        <ScientificProgram />
+        <Banner
+          transitionInterval={5000}
+          onCurrentItemChange={handleCurrentItemChange}
+        />
+        <AboutUs themeColor={themeColor} />
+        <ScientificProgram themeColor={themeColor} />
         <OrganizingCommittee />
         <EPoster />
+        <Updates />
         <SocialLinks />
       </MainPageTemplate>
     </div>

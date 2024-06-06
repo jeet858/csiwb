@@ -1,22 +1,26 @@
 import Image from "next/image";
 import dr from "../../../images/Soumitra_kr.png";
 import React from "react";
+import Carousel from "./Carousel";
 
 const OrganizingCommittee: React.FunctionComponent = () => {
+  const caraouserItems = [{ img: dr }, { img: dr }, { img: dr }, { img: dr }];
   return (
     <div className="mt-5 max-w-md self-center  overflow-hidden bg-white  md:max-w-2xl">
       <div className="flex flex-col">
-        <div className="flex flex-col">
+        {/* <div className="flex flex-col">
           <div className="self-center  pb-2 text-lg font-bold uppercase tracking-wide text-[#303791]">
             Organizing Committee
           </div>
           <div className="mb-8 flex h-1 w-20 self-center rounded-full bg-[#DA2128]"></div>
-        </div>
-        <div className="flex w-full items-center justify-center bg-[#303791] sm:h-fit md:flex-shrink-0 lg:h-fit">
-          <Image
-            className="h-full w-full object-cover"
-            src={dr}
-            alt="Dr. Soumitra Kumar"
+        </div> */}
+        <div className="flex w-full items-center justify-center  sm:h-96 md:h-fit md:flex-shrink-0 lg:h-fit">
+          <Carousel
+            indicatorColor=""
+            items={caraouserItems}
+            arrows={false}
+            indicator={true}
+            autoPlay={false}
           />
         </div>
         <div className="p-8 text-center">
@@ -28,7 +32,7 @@ const OrganizingCommittee: React.FunctionComponent = () => {
             Kankurgachi, Kolkata which also houses CSI-WB Office.
           </p>
           <div className="mt-4">
-            <button className="rounded bg-[#1849C6] px-4 py-2 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+            <button className="rounded  bg-[#560303] px-4 py-2 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
               Read More
             </button>
           </div>
