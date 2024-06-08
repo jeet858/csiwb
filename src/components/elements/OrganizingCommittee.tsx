@@ -1,10 +1,20 @@
 import Image from "next/image";
-import dr from "../../../images/Soumitra_kr.png";
+import sk from "../../../images/soumitra_kr.png";
+import rs from "../../../images/ranjan_sharma.png";
+import sb from "../../..//images/sunip_banerjee.png";
+import pk from "../../../images/pk_hazra.png";
+import sbv from "../../../images/suvro_banerjee.png";
 import React from "react";
 import Carousel from "./Carousel";
 
 const OrganizingCommittee: React.FunctionComponent = () => {
-  const caraouserItems = [{ img: dr }, { img: dr }, { img: dr }, { img: dr }];
+  const caraouserItems = [
+    { img: sk },
+    { img: rs },
+    { img: sb },
+    { img: sbv },
+    { img: pk },
+  ];
   return (
     <div className="mt-5 max-w-md self-center  overflow-hidden bg-white  md:max-w-2xl">
       <div className="flex flex-col">
