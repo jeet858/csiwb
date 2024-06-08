@@ -4,8 +4,15 @@ import eposterHeading from "../../../images/eposter-heading.png";
 import eposter from "../../../images/eposter.png";
 import Image from "next/image";
 import Carousel from "./Carousel";
+import Button from "@mui/material/Button";
+import Modal from "@mui/material/Modal";
+import UploadPoster from "../form/UploadPoster";
 
 const SubmitPoster: React.FunctionComponent = () => {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   const items = [
     { img: eposter },
     { img: eposter },
@@ -76,9 +83,21 @@ const SubmitPoster: React.FunctionComponent = () => {
           />
         </div>
       </div>
-      <button className="w-60 self-center rounded-md bg-[#5F0404] py-2 font-semibold text-white hover:bg-blue-700">
+      <Button
+        onClick={handleOpen}
+        className="w-60 self-center rounded-md bg-[#5F0404] py-2 font-semibold text-white hover:bg-blue-700"
+      >
         Upload Poster
-      </button>
+      </Button>
+      <Modal
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        className="h-screen w-screen flex justify-center items-center"
+        open={open}
+        onClose={handleClose}
+      >
+        <UploadPoster />
+      </Modal>
     </div>
   );
 };
