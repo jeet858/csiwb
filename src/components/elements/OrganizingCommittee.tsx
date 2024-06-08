@@ -1,5 +1,5 @@
 import Image from "next/image";
-import sk from "../../../images/soumitra_kr.png";
+import sk from "../../../images/Soumitra_kr.png";
 import rs from "../../../images/ranjan_sharma.png";
 import sb from "../../..//images/sunip_banerjee.png";
 import pk from "../../../images/pk_hazra.png";
