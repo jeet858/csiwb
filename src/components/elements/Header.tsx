@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import { SlMenu } from "react-icons/sl";
 import logo from "../../../images/logo.png";
 import Image from "next/image";
-
-const Header: React.FunctionComponent = () => {
+interface HeaderProps {
+  onAboutUsClick: () => void;
+}
+const Header: React.FunctionComponent<HeaderProps> = ({ onAboutUsClick }) => {
   const [menu, setMenu] = useState(false);
   const HeaderArr = [
     { name: "Home", link: "/" },
@@ -42,13 +44,13 @@ const Header: React.FunctionComponent = () => {
             <ul className="flex flex-col">
               {HeaderArr.map((item, index) => (
                 <li key={index} className="h-16">
-                  <Link
+                  <button
                     key={index}
-                    href={item.link}
+                    onClick={onAboutUsClick}
                     className="block px-4 py-2 text-gray-600 hover:bg-blue-700 hover:text-white"
                   >
                     {item.name}
-                  </Link>
+                  </button>
                 </li>
               ))}
             </ul>
