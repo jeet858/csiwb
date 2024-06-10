@@ -7,6 +7,7 @@ import Carousel from "./Carousel";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import UploadPoster from "../form/UploadPoster";
+import { FiUpload } from "react-icons/fi";
 
 const SubmitPoster: React.FunctionComponent = () => {
   const [open, setOpen] = React.useState(false);
@@ -87,12 +88,13 @@ const SubmitPoster: React.FunctionComponent = () => {
         onClick={handleOpen}
         className="w-60 self-center rounded-md bg-[#5F0404] py-2 font-semibold text-white hover:bg-blue-700"
       >
+        <FiUpload className="mr-2 h-6 w-6 text-white" />
         Upload Poster
       </Button>
       <Modal
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-        className="h-screen w-screen flex justify-center items-center"
+        className="flex h-screen w-screen items-center justify-center"
         open={open}
         onClose={handleClose}
       >

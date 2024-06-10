@@ -4,19 +4,32 @@ import { SlMenu } from "react-icons/sl";
 import logo from "../../../images/logo.png";
 import Image from "next/image";
 interface HeaderProps {
-  onAboutUsClick: () => void;
+  onAboutUsClick?: () => void;
+  onScientificProgramClick?: () => void;
+  onOurMembersClick?: () => void;
+  onSubmitEposterClick?: () => void;
+  onUpdatesClick?: () => void;
+  onContactUsClick?: () => void;
+  onDemoClick?: () => void;
 }
-const Header: React.FunctionComponent<HeaderProps> = ({ onAboutUsClick }) => {
+const Header: React.FunctionComponent<HeaderProps> = ({
+  onAboutUsClick,
+  onScientificProgramClick,
+  onOurMembersClick,
+  onSubmitEposterClick,
+  onUpdatesClick,
+  onContactUsClick,
+  onDemoClick,
+}) => {
   const [menu, setMenu] = useState(false);
   const HeaderArr = [
-    { name: "Home", link: "/" },
-    { name: "About Us", link: "/" },
-    { name: "Our Members", link: "/" },
-    { name: "Organization", link: "/" },
-    { name: "Membership", link: "/" },
-    { name: "News & Events", link: "/" },
-    { name: "Gallery", link: "/" },
-    { name: "Contact Us", link: "/" },
+    { name: "Home" },
+    { name: "About Us", onClick: onAboutUsClick },
+    { name: "Scientific Program", onClick: onScientificProgramClick },
+    { name: "Our Members", onClick: onOurMembersClick },
+    { name: "Submit E-Poster", onClick: onSubmitEposterClick },
+    { name: "Updates", onClick: onUpdatesClick },
+    { name: "Contact Us", onClick: onContactUsClick },
   ];
 
   // const handelMenu = () => {
@@ -46,7 +59,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({ onAboutUsClick }) => {
                 <li key={index} className="h-16">
                   <button
                     key={index}
-                    onClick={onAboutUsClick}
+                    onClick={item.onClick}
                     className="block px-4 py-2 text-gray-600 hover:bg-blue-700 hover:text-white"
                   >
                     {item.name}

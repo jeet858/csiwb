@@ -5,7 +5,7 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 
 const SocialLinks: React.FC = () => {
   return (
-    <div className="flex flex-col bg-gray-100 p-4 text-lg font-light">
+    <div className="flex w-full flex-col bg-gray-100 p-4 text-lg font-light">
       <h2 className="mb-4 font-semibold text-gray-500">Get In Touch</h2>
       <div className=" flex space-x-4">
         <span className="mb-2 flex items-center space-x-4">

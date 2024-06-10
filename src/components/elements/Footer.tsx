@@ -17,7 +17,7 @@ const Footer: React.FunctionComponent = () => {
             </div>
           </div>
         </div>
-        <div className="mb-6 border-t border-blue-700 pt-4 text-center">
+        <div className="mb-6 border-t  pt-4 text-center">
           <p>&copy; 2024 CSI of West Bengal, All Rights Reserved.</p>
         </div>
       </div>
