@@ -6,6 +6,7 @@ import EPoster from "~/components/elements/EPoster";
 import Footer from "~/components/elements/Footer";
 import Header from "~/components/elements/Header";
 import OrganizingCommittee from "~/components/elements/OrganizingCommittee";
+import OrganizingCommitteeText from "~/components/elements/OrganizingCommitteeText";
 import ScientificProgram from "~/components/elements/ScientificProgram";
 import SocialLinks from "~/components/elements/SocialLinks";
 import Updates from "~/components/elements/Updates";
@@ -85,6 +86,7 @@ const index = () => {
           >
             <OrganizingCommittee />
           </div>
+          <OrganizingCommitteeText />
           <div
             className="flex flex-wrap items-center justify-center"
             ref={ePosterRef}
