@@ -16,7 +16,7 @@ const AboutUs: React.FunctionComponent<AboutUsProps> = ({ themeColor }) => {
   };
   return (
     <div
-      className="font-lato relative mt-[-90px] flex w-screen flex-col rounded-lg p-4  text-[#0E204E]"
+      className="relative mt-[-90px] flex w-screen flex-col rounded-lg p-4 font-lato  text-[#0E204E]"
       ref={ref}
     >
       <Image src={img} alt="About Us" className="self-center" />
@@ -61,7 +61,7 @@ const AboutUs: React.FunctionComponent<AboutUsProps> = ({ themeColor }) => {
       {!expandedView ? (
         <div className="text-center">
           <button
-            className="rounded bg-[#560303] px-4 py-2 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+            className="rounded bg-[#560303] px-4 py-2 text-white hover:bg-[#280101]  "
             onClick={() => {
               setExpandedView(true);
             }}
@@ -72,7 +72,7 @@ const AboutUs: React.FunctionComponent<AboutUsProps> = ({ themeColor }) => {
       ) : (
         <div className="text-center">
           <button
-            className="rounded bg-[#560303] px-4 py-2 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+            className="rounded bg-[#560303] px-4 py-2 text-white hover:bg-[#280101]  "
             onClick={() => {
               setExpandedView(false);
               onReadLessClick();

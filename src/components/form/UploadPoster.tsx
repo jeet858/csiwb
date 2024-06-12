@@ -3,7 +3,17 @@ import { api } from "~/utils/api";
 import supabase, { createClient } from "@supabase/supabase-js";
 import { FiUpload } from "react-icons/fi";
 import { env } from "~/env";
-const UploadPoster: React.FC = () => {
+import { IoCloseOutline } from "react-icons/io5";
+interface UploadPosterProps {
+  onCloseClick: () => void;
+  onUploadSuccess: (value: boolean) => void;
+  onUploadFailed: (value: boolean) => void;
+}
+const UploadPoster: React.FC<UploadPosterProps> = ({
+  onCloseClick,
+  onUploadSuccess,
+  onUploadFailed,
+}) => {
   const [agreed, setAgreed] = useState<boolean>(false);
   const [files, setFiles] = useState<File | null>();
   const [fileName, setFileName] = useState<string>("");
@@ -61,10 +71,11 @@ const UploadPoster: React.FC = () => {
   };
   const poster = api.post.uploadPoster.useMutation({
     onError(error, variables, context) {
-      alert("error occured");
+      onUploadFailed(true);
     },
     onSuccess(data, variables, context) {
-      alert("Success");
+      onCloseClick();
+      onUploadSuccess(true);
     },
   });
   const uploadPoster = () => {
@@ -85,7 +96,7 @@ const UploadPoster: React.FC = () => {
         .from("posters")
         .upload(`${avatarFile.name}${date}`, avatarFile, {
           cacheControl: "3600",
-          upsert: true,
+          upsert: false,
         });
       if (!error) {
         const filePathWithEncodedSpaces = data.path.replace(/ /g, "%20");
@@ -98,12 +109,19 @@ const UploadPoster: React.FC = () => {
         });
       }
     } else {
+      onUploadFailed(true);
     }
   };
 
   return (
     <div className="mx-auto mt-10 max-w-md rounded-lg bg-white p-6 shadow-md">
-      <h2 className="mb-4 text-2xl font-bold">Poster Upload Form</h2>
+      <div className="flex items-center justify-between">
+        <h2 className="mb-4 text-2xl font-bold">Poster Upload Form</h2>
+        <IoCloseOutline
+          className="mb-4 h-6 w-6 hover:text-red-700"
+          onClick={onCloseClick}
+        />
+      </div>
       <p className="mb-4">
         Please fill in the information and upload your poster.
       </p>
@@ -142,7 +160,7 @@ const UploadPoster: React.FC = () => {
         </div>
         <div className="mb-4">
           <input
-            type="text"
+            type="number"
             placeholder="Phone Number"
             value={uploadData.phone}
             onChange={(e) =>
@@ -185,13 +203,27 @@ const UploadPoster: React.FC = () => {
             I agree to the terms and conditions
           </label>
         </div>
-        <button
-          type="submit"
-          className="mt-2 w-full rounded bg-purple-600 p-2 text-white hover:bg-purple-700"
-          onClick={uploadFile}
-        >
-          Submit
-        </button>
+        {uploadData.email !== "" &&
+        uploadData.first_name !== "" &&
+        uploadData.last_name !== "" &&
+        uploadData.phone !== "" &&
+        files &&
+        agreed ? (
+          <button
+            type="submit"
+            className="mt-2 w-full rounded bg-[#5F0404] p-2 text-white hover:bg-[#280101]"
+            onClick={uploadFile}
+          >
+            Submit
+          </button>
+        ) : (
+          <button
+            type="submit"
+            className="mt-2 w-full rounded bg-[#d9d9d9] p-2 text-white "
+          >
+            Submit
+          </button>
+        )}
       </form>
     </div>
   );

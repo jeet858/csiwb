@@ -9,7 +9,7 @@ const OrganizingCommitteeText: React.FunctionComponent = () => {
     }
   };
   return (
-    <div className="font-lato w-screen p-8 text-center" ref={ref}>
+    <div className="w-screen p-8 text-center font-lato" ref={ref}>
       {expandedView ? (
         <p className="mt-4 text-[#0E204E]">
           Welcome To CSI West Bengal Branch It is well known now that the
@@ -131,7 +131,7 @@ const OrganizingCommitteeText: React.FunctionComponent = () => {
       {expandedView ? (
         <div className="mt-4">
           <button
-            className="rounded  bg-[#560303] px-4 py-2 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+            className="rounded bg-[#560303] px-4 py-2 text-white hover:bg-[#280101]"
             onClick={() => {
               setExpandedView(false);
               onReadLessClick();
@@ -143,7 +143,7 @@ const OrganizingCommitteeText: React.FunctionComponent = () => {
       ) : (
         <div className="mt-4">
           <button
-            className="rounded  bg-[#560303] px-4 py-2 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+            className="rounded bg-[#560303] px-4 py-2 text-white hover:bg-[#280101]"
             onClick={() => {
               setExpandedView(true);
             }}

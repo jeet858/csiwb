@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { SlMenu } from "react-icons/sl";
 import logo from "../../../images/logo.png";
 import Image from "next/image";
+import { useRouter } from "next/router";
 interface HeaderProps {
   onAboutUsClick?: () => void;
   onScientificProgramClick?: () => void;
@@ -31,7 +32,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
     { name: "Updates", onClick: onUpdatesClick },
     { name: "Contact Us", onClick: onContactUsClick },
   ];
-
+  const router = useRouter();
   // const handelMenu = () => {
   //   setMenu(!menu);
   // };
@@ -56,16 +57,31 @@ const Header: React.FunctionComponent<HeaderProps> = ({
           <nav className="absolute left-0 top-20 z-10 w-full bg-white">
             <ul className="flex flex-col">
               {HeaderArr.map((item, index) => (
-                <li key={index} className="h-16">
+                <li
+                  key={index}
+                  className="flex h-16 w-full hover:bg-blue-700 hover:text-white"
+                >
                   <button
                     key={index}
                     onClick={item.onClick}
-                    className="block px-4 py-2 text-gray-600 hover:bg-blue-700 hover:text-white"
+                    className="block px-4 py-2 text-gray-600 hover:text-white"
                   >
                     {item.name}
                   </button>
                 </li>
               ))}
+            </ul>
+            <ul className="flex flex-col">
+              <li className="flex h-16 w-full hover:bg-blue-700 hover:text-white">
+                <button
+                  className="block px-4 py-2 text-gray-600 hover:text-white"
+                  // onClick={() => {
+                  //   router.push("admin-panel");
+                  // }}
+                >
+                  Login
+                </button>
+              </li>
             </ul>
           </nav>
         )}

@@ -98,42 +98,44 @@ const CarouselTextOnly: React.FunctionComponent<CarouselProps> = ({
   };
 
   return (
-    <div className="flex h-full w-full justify-center self-center sm:px-2">
-      <div className="relative flex h-full w-full max-w-xl flex-col self-center overflow-hidden">
-        <div
-          className=" flex  h-full transition-transform duration-500"
-          style={{ transform: `translateX(${currentTranslate}%)` }}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-          ref={itemsRef}
-        >
-          {items.map((item, index) => (
-            <div
-              key={index}
-              className={` relative  top-[-60px] flex w-screen min-w-full items-center justify-center self-center font-lato text-xl text-white`}
+    <div className="grid h-full w-full">
+      <div className="flex h-full w-full justify-center self-center sm:px-2">
+        <div className="relative flex h-full w-full max-w-xl flex-col self-center overflow-hidden">
+          <div
+            className=" flex  h-full transition-transform duration-500"
+            style={{ transform: `translateX(${currentTranslate}%)` }}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            ref={itemsRef}
+          >
+            {items.map((item, index) => (
+              <div
+                key={index}
+                className={` relative  top-[-60px] flex w-screen min-w-full items-center justify-center self-center font-lato text-xl text-white`}
+              >
+                {item.text}
+              </div>
+            ))}
+          </div>
+
+          {arrows ? (
+            <button
+              className="absolute left-4 top-1/2  z-[99999] ml-[80px]  -translate-y-1/2 transform rounded-full  p-2 text-white"
+              onClick={prev}
             >
-              {item.text}
-            </div>
-          ))}
-        </div>
-        {arrows ? (
-          <button
-            className="absolute left-4 top-1/2 -translate-y-1/2 transform rounded-full  p-2 text-white"
-            onClick={prev}
-          >
-            <MdKeyboardArrowLeft className="h-8 w-8" />
-          </button>
-        ) : null}
-        {arrows ? (
-          <button
-            className="absolute right-4 top-1/2 -translate-y-1/2 transform rounded-full  p-2 text-white"
-            onClick={next}
-          >
-            <MdKeyboardArrowRight className="h-8 w-8" />
-          </button>
-        ) : null}
-        {/* {indicator ? (
+              <MdKeyboardArrowLeft className="h-8 w-8" />
+            </button>
+          ) : null}
+          {arrows ? (
+            <button
+              className="absolute right-4 top-1/2 mr-[80px] -translate-y-1/2 transform  rounded-full  p-2 text-white"
+              onClick={next}
+            >
+              <MdKeyboardArrowRight className="h-8 w-8" />
+            </button>
+          ) : null}
+          {/* {indicator ? (
           <div className="relative bottom-4 left-1/2 z-20 mt-8 flex w-full -translate-x-1/2 transform justify-center space-x-2 self-center">
             {items.map((_, index) => (
               <span
@@ -146,35 +148,36 @@ const CarouselTextOnly: React.FunctionComponent<CarouselProps> = ({
             ))}
           </div>
         ) : null} */}
-        {indicator ? (
-          <div className="relative bottom-4 left-1/2 z-20 mt-8 flex w-full -translate-x-1/2 transform justify-center space-x-2 self-center">
-            {Array.from(
-              {
-                length:
-                  currentIndex === items.length
-                    ? currentIndex - 1
-                    : currentIndex + 1,
-              },
-              (_, index) => (
-                <span
-                  key={index}
-                  className={`h-2 w-2 rounded-full  `}
-                  onClick={() => goToIndex(index)}
-                  style={{ backgroundColor: indicatorColor }}
-                ></span>
-              ),
-            )}
+          {indicator ? (
+            <div className="relative bottom-4 left-1/2 z-20 mt-8 flex w-full -translate-x-1/2 transform justify-center space-x-2 self-center">
+              {Array.from(
+                {
+                  length:
+                    currentIndex === items.length
+                      ? currentIndex - 1
+                      : currentIndex + 1,
+                },
+                (_, index) => (
+                  <span
+                    key={index}
+                    className={`h-2 w-2 rounded-full  `}
+                    onClick={() => goToIndex(index)}
+                    style={{ backgroundColor: indicatorColor }}
+                  ></span>
+                ),
+              )}
 
-            <div
-              className=" h-2 rounded-xl "
-              style={{
-                width: `${(items.length - currentIndex - 1) * 15}px`,
-                display: `${currentIndex + 1 !== items.length ? "" : "none"}`,
-                backgroundColor: indicatorColor,
-              }}
-            ></div>
-          </div>
-        ) : null}
+              <div
+                className=" h-2 rounded-xl "
+                style={{
+                  width: `${(items.length - currentIndex - 1) * 15}px`,
+                  display: `${currentIndex + 1 !== items.length ? "" : "none"}`,
+                  backgroundColor: indicatorColor,
+                }}
+              ></div>
+            </div>
+          ) : null}
+        </div>
       </div>
     </div>
   );

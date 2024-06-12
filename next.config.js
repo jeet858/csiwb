@@ -2,6 +2,7 @@
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially useful
  * for Docker builds.
  */
+import withPWA from "@ducanh2912/next-pwa";
 await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
@@ -27,7 +28,7 @@ const config = {
   },
   transpilePackages: ["geist"],
 };
-const withPWA = require("@ducanh2912/next-pwa").default({
+const withPWAConfig = withPWA({
   dest: "public",
   cacheOnFrontEndNav: true,
   aggressiveFrontEndNavCaching: true,
@@ -38,4 +39,4 @@ const withPWA = require("@ducanh2912/next-pwa").default({
   },
 });
 
-module.exports = withPWA(config);
+export default withPWAConfig(config);
