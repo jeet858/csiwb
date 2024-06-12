@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer: React.FunctionComponent = () => {
   return (
-    <footer className="flex w-screen justify-center bg-[#1F0101] text-white ">
+    <footer className="flex w-screen justify-center bg-[#1F0101] font-lato text-white">
       <div className="flex w-full flex-col">
         <div className="flex h-60 w-full flex-col bg-[#280101] p-6">
           <div className="flex h-full w-full flex-col justify-start ">

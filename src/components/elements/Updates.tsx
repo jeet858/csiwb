@@ -4,7 +4,7 @@ import heartIcon from "../../../images/heart-icon.png";
 import Image from "next/image";
 const Updates: React.FunctionComponent = () => {
   return (
-    <div className="bg flex h-64 w-full justify-center">
+    <div className="bg flex h-64 w-full justify-center font-lato">
       <div className="flex w-3/5 flex-col self-center">
         <Image
           src={updatesHeading}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Carousel from "./Carousel";
+import CarouselTextOnly from "./CarouselTextOnly";
 import img from "../../../images/caraousel.png";
 import img2 from "./../../../images/scientific-program.png";
 import keynote1 from "../../../images/keynote_1.png";
@@ -15,7 +16,7 @@ interface ScientificProgramProps {
 const ScientificProgram: React.FunctionComponent<ScientificProgramProps> = ({
   themeColor,
 }) => {
-  const items = [
+  const itemsImage = [
     { img: keynote1 },
     { img: keynote2 },
     { img: keynote3 },
@@ -23,6 +24,14 @@ const ScientificProgram: React.FunctionComponent<ScientificProgramProps> = ({
     { img: keynote5 },
     { img: keynote6 },
     { img: keynote7 },
+  ];
+  const itemsText = [
+    { text: "Practice-oriented Case Discussions" },
+    { text: "Didactic talks on Contemporary Topics" },
+    { text: "Cardiology Quiz with Prizes" },
+    { text: "CD Presentation on Challenging Cases" },
+    { text: "Competitive CD and Poster Presentations by PDTs" },
+    { text: "National Panel Discussion on NCD" },
   ];
   // const [currentItem, setCurrentItem] = useState<string>("");
 
@@ -40,14 +49,16 @@ const ScientificProgram: React.FunctionComponent<ScientificProgramProps> = ({
       </h2>
       <div className="mb-8 flex h-1 w-20 self-center rounded-full bg-[#DA2128]"></div> */}
 
-      <Carousel
-        items={items}
-        indicator={true}
-        autoPlay={false}
-        arrows={true}
-        drag={true}
-        indicatorColor="#7C0202"
-      />
+      <div className="slider-bg flex h-[909px] w-full">
+        <CarouselTextOnly
+          items={itemsText}
+          indicator={true}
+          autoPlay={false}
+          arrows={true}
+          drag={true}
+          indicatorColor="#7C0202"
+        />
+      </div>
     </div>
   );
 };

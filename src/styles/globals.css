@@ -14,3 +14,9 @@
   background-repeat: no-repeat; /* This will prevent the image from repeating */
   background-position: center; /* This will center the background image */
 }
+.slider-bg {
+  background-image: url("../../images/Group_89.png");
+  background-size: contain; /* This will make the background cover the entire area */
+  background-repeat: no-repeat; /* This will prevent the image from repeating */
+  background-position: center; /* This will center the background image */
+}

@@ -155,7 +155,7 @@ const UploadPoster: React.FC = () => {
           <label className="mb-1 block"> Upload your file</label>
 
           <div
-            className={`flex h-24 w-full items-center justify-center rounded-md border-2 border-dashed border-[#656565] ${dragging ? "bg-[#d9d9d985]" : "bg-[#d9d9d9]"} p-[1%]`}
+            className={`flex h-24 w-full items-center justify-center rounded-md border-2 border-dashed border-[#656565] ${dragging ? "bg-[#d9d9d985]" : "bg-[#d9d9d9]"} flex-col p-[1%]`}
             onDragEnter={handleDragEnter}
             onDragLeave={handleDragLeave}
             onDragOver={handleDragOver}
@@ -165,11 +165,13 @@ const UploadPoster: React.FC = () => {
               <input
                 type="file"
                 onChange={handleFileChange}
-                accept=".jpg,.jpeg,.png,.pdf"
+                accept=".jpg,.jpeg,.png,"
                 required
+                className="pl-20"
               />
             )}
             {files ? <p>{fileName}</p> : ""}
+            <p>Only .jpg, .jpeg and .png file types are accepted</p>
           </div>
         </div>
         <div className="mb-4">
