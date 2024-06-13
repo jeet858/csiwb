@@ -1,9 +1,3 @@
 node_modules
 .next
-sw.js
-sw.js.map
-swe-worker-development.js
-workbox-7144475a.js
-workbox-7144475a.js.map
 .env
-.env*.local
