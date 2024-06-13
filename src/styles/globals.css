@@ -20,6 +20,12 @@
   background-repeat: no-repeat; /* This will prevent the image from repeating */
   background-position: center; /* This will center the background image */
 }
+.slider-bg2 {
+  background-image: url("../../images/Group 65.png");
+  background-size: contain; /* This will make the background cover the entire area */
+  background-repeat: no-repeat; /* This will prevent the image from repeating */
+  background-position: center; /* This will center the background image */
+}
 .popup-bg {
   background-image: url("../../images/popup-bg.png");
   background-size: cover; /* This will make the background cover the entire area */
@@ -28,4 +34,12 @@
 }
 .display-webkit-box {
   display: -webkit-inline-box;
+}
+.background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease; /* Smooth transition */
 }
