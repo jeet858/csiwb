@@ -26,3 +26,6 @@
   background-repeat: no-repeat; /* This will prevent the image from repeating */
   background-position: center; /* This will center the background image */
 }
+.display-webkit-box {
+  display: -webkit-inline-box;
+}

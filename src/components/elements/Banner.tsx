@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import banner from "../../../images/Group 81.png";
-import banner1 from "../../../images/CSI-ban-3-1.png";
-import banner2 from "../../../images/CSI-ban-3-2.png";
+import banner1 from "../../../images/trial_1.png";
+import banner2 from "../../../images/trial_2.png";
 
 import Carousel from "./Carousel";
 interface BannerPops {
