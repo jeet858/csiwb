@@ -28,8 +28,10 @@ const config = {
       },
     ],
     "@typescript-eslint/require-await": "off",
+    "@typescript-eslint/prefer-nullish-coalescing": "warn",
+
     "@typescript-eslint/no-misused-promises": [
-      "error",
+      "warn",
       {
         checksVoidReturn: {
           attributes: false,

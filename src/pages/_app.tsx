@@ -4,12 +4,17 @@ import Head from "next/head";
 
 import "~/styles/globals.css";
 import { api } from "~/utils/api";
+import { SessionProvider } from "next-auth/react";
+import { type Session } from "next-auth";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
 });
-const MyApp: AppType = ({ Component, pageProps }) => {
+const MyApp: AppType<{ session: Session | null }> = ({
+  Component,
+  pageProps: { session, ...pageProps },
+}) => {
   return (
     <main className={`font-sans ${inter.variable}`}>
       <Head>
@@ -85,7 +90,11 @@ const MyApp: AppType = ({ Component, pageProps }) => {
           sizes="640x1136"
         />
       </Head>
-      <Component {...pageProps} />
+      <SessionProvider session={session}>
+        <main className={`font-sans ${inter.variable}`}>
+          <Component {...pageProps} />
+        </main>
+      </SessionProvider>
     </main>
   );
 };

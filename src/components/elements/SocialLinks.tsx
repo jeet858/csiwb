@@ -27,6 +27,18 @@ const SocialLinks: React.FC = () => {
           </a> */}
         </span>
       </div>
+      <h2 className="mb-4 font-semibold text-gray-500">
+        Event Courtesy: MindVision Corporates - 9674080340/ 9831073361
+      </h2>
+      <h2 className="mb-4 font-semibold text-gray-500 ">
+        CSI WB Office Email -
+        <a
+          href={`mailto:jeetmajumder858@gmail.com`}
+          className="ml-1 hover:text-blue-700 hover:underline"
+        >
+          csi.wbbranch@gmail.com
+        </a>
+      </h2>
     </div>
   );
 };

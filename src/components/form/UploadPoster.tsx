@@ -4,6 +4,8 @@ import supabase, { createClient } from "@supabase/supabase-js";
 import { FiUpload } from "react-icons/fi";
 import { env } from "~/env";
 import { IoCloseOutline } from "react-icons/io5";
+import { Modal } from "@mui/material";
+import ProcessingPopup from "~/popups/ProcessingPopup";
 interface UploadPosterProps {
   onCloseClick: () => void;
   onUploadSuccess: (value: boolean) => void;
@@ -18,6 +20,9 @@ const UploadPoster: React.FC<UploadPosterProps> = ({
   const [files, setFiles] = useState<File | null>();
   const [fileName, setFileName] = useState<string>("");
   const [dragging, setDragging] = useState(false);
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const [uploadData, setUploadData] = useState({
     first_name: "",
     last_name: "",
@@ -71,9 +76,11 @@ const UploadPoster: React.FC<UploadPosterProps> = ({
   };
   const poster = api.post.uploadPoster.useMutation({
     onError(error, variables, context) {
+      handleClose();
       onUploadFailed(true);
     },
     onSuccess(data, variables, context) {
+      handleClose();
       onCloseClick();
       onUploadSuccess(true);
     },
@@ -87,6 +94,7 @@ const UploadPoster: React.FC<UploadPosterProps> = ({
     });
   };
   const uploadFile = async () => {
+    handleOpen();
     const supabase_url = env.NEXT_PUBLIC_SUPABASE_URL;
     const supabase_anon_key = env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
     const supabase = createClient(supabase_url, supabase_anon_key);
@@ -115,6 +123,15 @@ const UploadPoster: React.FC<UploadPosterProps> = ({
 
   return (
     <div className="mx-auto mt-10 max-w-md rounded-lg bg-white p-6 shadow-md">
+      <Modal
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        className="flex h-screen w-screen items-center justify-center"
+        open={open}
+        onClose={handleClose}
+      >
+        <ProcessingPopup />
+      </Modal>
       <div className="flex items-center justify-between">
         <h2 className="mb-4 text-2xl font-bold">Poster Upload Form</h2>
         <IoCloseOutline

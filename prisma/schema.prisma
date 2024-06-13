@@ -79,3 +79,7 @@ model Poster{
     image_url String
     @@id([name,email,phone,image_url])
 }
+model UserData{
+    id String @id
+    password String
+}

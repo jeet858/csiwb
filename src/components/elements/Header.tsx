@@ -24,7 +24,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
 }) => {
   const [menu, setMenu] = useState(false);
   const HeaderArr = [
-    { name: "Home" },
+    { name: "Home", onClick: onAboutUsClick },
     { name: "About Us", onClick: onAboutUsClick },
     { name: "Scientific Program", onClick: onScientificProgramClick },
     { name: "Our Members", onClick: onOurMembersClick },
@@ -59,12 +59,12 @@ const Header: React.FunctionComponent<HeaderProps> = ({
               {HeaderArr.map((item, index) => (
                 <li
                   key={index}
-                  className="flex h-16 w-full hover:bg-blue-700 hover:text-white"
+                  className="flex h-16 w-full text-gray-600 hover:bg-blue-700 hover:text-white"
                 >
                   <button
                     key={index}
                     onClick={item.onClick}
-                    className="block px-4 py-2 text-gray-600 hover:text-white"
+                    className="block px-4 py-2  "
                   >
                     {item.name}
                   </button>
@@ -72,12 +72,12 @@ const Header: React.FunctionComponent<HeaderProps> = ({
               ))}
             </ul>
             <ul className="flex flex-col">
-              <li className="flex h-16 w-full hover:bg-blue-700 hover:text-white">
+              <li className="flex h-16 w-full text-gray-600 hover:bg-blue-700 hover:text-white">
                 <button
-                  className="block px-4 py-2 text-gray-600 hover:text-white"
-                  // onClick={() => {
-                  //   router.push("admin-panel");
-                  // }}
+                  className="block px-4 py-2 "
+                  onClick={async () => {
+                    await router.push("admin-panel");
+                  }}
                 >
                   Login
                 </button>

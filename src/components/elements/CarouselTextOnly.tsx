@@ -110,9 +110,11 @@ const CarouselTextOnly: React.FunctionComponent<CarouselProps> = ({
             ref={itemsRef}
           >
             {items.map((item, index) => (
-              <div className="flex w-screen min-w-full items-center justify-center">
+              <div
+                className="flex w-screen min-w-full items-center justify-center"
+                key={index}
+              >
                 <div
-                  key={index}
                   className={` relative top-[-60px]  mt-40 w-[200px]  self-center font-lato text-xl text-white`}
                   style={{ wordWrap: "break-word", whiteSpace: "normal" }}
                 >
