@@ -121,18 +121,18 @@ const CarouselTextOnly: React.FunctionComponent<CarouselProps> = ({
 
           {arrows ? (
             <button
-              className="absolute left-4 top-1/2  z-[99999] ml-[80px]  -translate-y-1/2 transform rounded-full  p-2 text-white"
+              className="absolute left-4 top-1/2  z-[99999] ml-[80px]  mt-40 -translate-y-1/2 transform  rounded-full p-2 text-white"
               onClick={prev}
             >
-              <MdKeyboardArrowLeft className="h-8 w-8" />
+              <MdKeyboardArrowLeft className="h-10 w-10" />
             </button>
           ) : null}
           {arrows ? (
             <button
-              className="absolute right-4 top-1/2 mr-[80px] -translate-y-1/2 transform  rounded-full  p-2 text-white"
+              className="absolute right-4 top-1/2 mr-[80px] mt-40 -translate-y-1/2  transform  rounded-full p-2 text-white"
               onClick={next}
             >
-              <MdKeyboardArrowRight className="h-8 w-8" />
+              <MdKeyboardArrowRight className="h-10 w-10" />
             </button>
           ) : null}
           {/* {indicator ? (
