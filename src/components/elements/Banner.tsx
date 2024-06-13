@@ -31,7 +31,7 @@ const Banner: React.FunctionComponent<BannerPops> = ({
     <div>
       <Carousel
         items={items}
-        autoPlay={false}
+        autoPlay={true}
         autoPlayInterval={transitionInterval}
         indicator={false}
         arrows={false}
