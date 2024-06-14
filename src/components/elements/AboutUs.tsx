@@ -21,7 +21,7 @@ const AboutUs: React.FunctionComponent<AboutUsProps> = ({ themeColor }) => {
     >
       <Image src={img} alt="About Us" className="self-center" />
       {!expandedView ? (
-        <p className="mb-6 text-center">
+        <p className="mb-6 ">
           It is well known now that the Cardiological Society of India was
           conceived in a dramatic fashion during a 12-hour train ride in 1946
           and revealed itself as the first cardiological body in Asia on 4th
