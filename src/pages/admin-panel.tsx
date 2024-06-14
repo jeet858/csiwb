@@ -52,9 +52,9 @@ const AdminPanel: React.FunctionComponent = () => {
               <div className="rounded-full ">
                 <FaPowerOff
                   className="h-8 w-8"
-                  onClick={(e) => {
+                  onClick={async (e) => {
                     e.preventDefault();
-                    signOut();
+                    await signOut();
                   }}
                 />
               </div>
