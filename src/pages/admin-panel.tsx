@@ -18,7 +18,7 @@ const AdminPanel: React.FunctionComponent = () => {
     upload_date: string;
     upload_time: string;
   }>();
-  const [imageLoading, setImageLoading] = useState(true);
+  const [imageLoading, setImageLoading] = useState(false);
   const ses = useSession();
   if (ses.status === "loading") {
     return <div></div>;
@@ -37,9 +37,7 @@ const AdminPanel: React.FunctionComponent = () => {
                   key={index}
                   className={`flex h-12 min-h-12 w-4/5 cursor-pointer items-center rounded-r-full bg-white pl-[5%] font-lato text-lg font-semibold shadow-lg  sm:w-32 sm:min-w-32 sm:pr-2 sm:text-sm md:min-h-fit md:w-32 md:pr-2  md:text-sm ${item.image_url === selectedItem?.image_url ? "text-[#8A0406]" : "text-[#DC4952]"}`}
                   onClick={() => {
-                    setImageLoading(true);
                     setSelectedItem(item);
-                    console.log(item.image_url);
                   }}
                 >
                   {item.name}
@@ -68,7 +66,7 @@ const AdminPanel: React.FunctionComponent = () => {
             <div className="grid h-[95%] w-[94%] self-center justify-self-center overflow-y-auto rounded-lg bg-white shadow-lg">
               <div className="2xl:w-[95%] flex h-full w-[95%] justify-center  self-end justify-self-end sm:w-[93%] md:w-[92%] xl:w-[93%]">
                 {selectedItem !== undefined &&
-                  (!imageLoading ? (
+                  (imageLoading === false ? (
                     <div className="flex w-full flex-col">
                       <p className="my-[4%] items-center justify-center self-center font-lato text-3xl uppercase text-[#4B0505]">
                         {selectedItem.name}
@@ -81,7 +79,12 @@ const AdminPanel: React.FunctionComponent = () => {
                           width={400}
                           height={400}
                           onLoadingComplete={() => {
+                            console.log("complert");
                             setImageLoading(false);
+                          }}
+                          onLoadStart={() => {
+                            alert("at");
+                            setImageLoading(true);
                           }}
                         />
                         <div className="mt-4 flex h-full w-1/2  flex-col items-center justify-evenly self-start sm:w-full md:w-full">
@@ -131,7 +134,6 @@ const AdminPanel: React.FunctionComponent = () => {
                                       item.phone === selectedItem.phone &&
                                       item.image_url === selectedItem.image_url,
                                   );
-                                  setImageLoading(true);
                                   setSelectedItem(data[index - 1]);
                                 }
                               }}
@@ -150,7 +152,6 @@ const AdminPanel: React.FunctionComponent = () => {
                                       item.phone === selectedItem.phone &&
                                       item.image_url === selectedItem.image_url,
                                   );
-                                  setImageLoading(true);
                                   setSelectedItem(data[index + 1]);
                                 }
                               }}
