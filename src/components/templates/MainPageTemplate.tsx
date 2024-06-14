@@ -8,7 +8,6 @@ interface MainPageTemplateProps {
 const MainPageTemplate: React.FC<MainPageTemplateProps> = (props) => {
   return (
     <div className="flex h-full w-full flex-col overflow-x-hidden overscroll-y-auto">
-      <Header />
       <div className="z-0 mt-20 flex w-full flex-col">
         {props.children}
         <Footer />

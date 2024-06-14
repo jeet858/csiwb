@@ -21,6 +21,13 @@ const MyApp: AppType<{ session: Session | null }> = ({
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>CSIWB</title>
         <meta name="description" content="Best PWA app in the world!" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap"
+          rel="stylesheet"
+        />
+
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="mask-icon" href="/icons/mask-icon.svg" color="#FFFFFF" />
         <meta name="theme-color" content="#ffffff" />

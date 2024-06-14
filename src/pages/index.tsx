@@ -10,7 +10,6 @@ import OrganizingCommitteeText from "~/components/elements/OrganizingCommitteeTe
 import ScientificProgram from "~/components/elements/ScientificProgram";
 import SocialLinks from "~/components/elements/SocialLinks";
 import Updates from "~/components/elements/Updates";
-import MainPageTemplate from "~/components/templates/MainPageTemplate";
 
 const index = () => {
   const [themeColor, setThemeColor] = useState<string>("");

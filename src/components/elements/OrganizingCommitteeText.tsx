@@ -1,4 +1,6 @@
+import Image from "next/image";
 import React, { useRef, useState } from "react";
+import img from "../../../images/Group 96.png";
 
 const OrganizingCommitteeText: React.FunctionComponent = () => {
   const [expandedView, setExpandedView] = useState(false);
@@ -152,6 +154,11 @@ const OrganizingCommitteeText: React.FunctionComponent = () => {
           </button>
         </div>
       )}
+      <div className="font-sansita flex h-fit w-full flex-col items-center text-2xl">
+        <p className="mt-4 text-[#8A0406]">MAJOR</p>
+        <p className="text-[#E06F46]">EVENTS</p>
+        <Image alt="" src={img} />
+      </div>
     </div>
   );
 };

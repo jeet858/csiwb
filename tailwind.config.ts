@@ -15,6 +15,7 @@ export default {
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
         lato: ["Lato", "sans-serif"],
+        sansita: ["Sansita", "sans-serif"],
       },
       keyframes: {
         fadeIn: {
