@@ -152,7 +152,7 @@ const OrganizingCommitteeText: React.FunctionComponent = () => {
         </p>
       )}
       {expandedView ? (
-        <div className="mt-4">
+        <div className="mt-4 flex justify-center">
           <button
             className="self-center rounded bg-[#560303] px-4 py-2 text-white hover:bg-[#280101]"
             onClick={() => {
@@ -164,7 +164,7 @@ const OrganizingCommitteeText: React.FunctionComponent = () => {
           </button>
         </div>
       ) : (
-        <div className="mt-4">
+        <div className="mt-4 flex justify-center">
           <button
             className="self-center rounded bg-[#560303] px-4 py-2 text-white hover:bg-[#280101]"
             onClick={() => {
