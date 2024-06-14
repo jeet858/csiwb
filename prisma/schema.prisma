@@ -77,7 +77,9 @@ model Poster{
     email String
     phone String
     image_url String
-    @@id([name,email,phone,image_url])
+    upload_date String
+    upload_time String
+    @@id([name,email,phone,image_url,upload_date,upload_time])
 }
 model UserData{
     id String @id

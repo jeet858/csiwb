@@ -47,8 +47,19 @@ export const postRouter = createTRPCRouter({
   uploadPoster: publicProcedure
     .input(uploadPosterSchema)
     .mutation(async ({ ctx, input }) => {
+      const now = new Date();
+      const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+      const istDate = new Date(utc + 3600000 * 5.5);
+      const istDateString = istDate
+        .toLocaleString("en-US", {
+          timeZone: "Asia/Kolkata",
+        })
+        .split(", ");
+
       return await ctx.db.poster.create({
         data: {
+          upload_date: istDateString[0] as string,
+          upload_time: istDateString[1] as string,
           email: input.email,
           image_url: input.image_url,
           name: input.name,

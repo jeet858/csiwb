@@ -49,3 +49,8 @@
   background-repeat: no-repeat; /* This will prevent the image from repeating */
   background-position: center; /* This will center the background image */
 }
+@media screen and (max-width: 320px) {
+  .custom {
+    flex-direction: column;
+  }
+}
