@@ -31,7 +31,7 @@ const AboutUs: React.FunctionComponent<AboutUsProps> = ({ themeColor }) => {
         </p>
       ) : (
         <div className="flex h-fit w-full flex-col">
-          <p className="mb-6 text-center">
+          {/* <p className="mb-6 text-center">
             Warmest greetings from Cardiological Society of India, West Bengal
             Branch. In keeping with the aphorism of yesteryears, “What Bengal
             thinks today, India thinks tomorrow”, the Cardiological Society of
@@ -57,6 +57,14 @@ const AboutUs: React.FunctionComponent<AboutUsProps> = ({ themeColor }) => {
             lost opportunity. Please join us actively and whole-heartedly in
             this celebration of bonhomie and academic feast. We will leave no
             stone unturned to make this a memorable occasion.
+          </p> */}
+          <p className="mb-6 text-center">
+            It is well known now that the Cardiological Society of India was
+            conceived in a dramatic fashion during a 12-hour train ride in 1946
+            and revealed itself as the first cardiological body in Asia on 4th
+            April 1948 in Calcutta, one year before the formation of the
+            American College of Cardiology, with none other than Dr. Bidhan
+            Chandra Roy at the helm of affairs.
           </p>
           <p className="mb-6 text-center">
             Advancement of scientific knowledge and research in relation to the

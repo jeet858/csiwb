@@ -53,37 +53,40 @@ const Header: React.FunctionComponent<HeaderProps> = ({
           </button>
         </div>
         {menu && (
-          <nav className="absolute left-0 top-20 z-10 w-full bg-white font-lato">
+          <nav
+            className="absolute left-0 top-20 z-10 w-full bg-white font-lato"
+            onMouseEnter={() => {
+              setPreviouslySelected("");
+            }}
+          >
             <ul className="flex flex-col">
               {HeaderArr.map((item, index) => (
                 <li
                   key={index}
-                  className={`flex h-16 w-full border-b border-[#868DA0] text-gray-600 hover:bg-[#FFB701] hover:text-[#560303] ${item.name === previouslySelected ? "bg-[#6b2323] text-white" : ""}`}
+                  className={`flex h-16 w-full border-b border-[#868DA0] text-gray-600 hover:bg-[#FFB701] hover:text-[#560303] ${item.name === previouslySelected ? "bg-[#6b2323] text-white" : ""} cursor-pointer`}
+                  onClick={() => {
+                    setMenu(false);
+                    setPreviouslySelected(item.name);
+                    item.onClick();
+                  }}
                 >
-                  <button
-                    key={index}
-                    onClick={() => {
-                      setMenu(false);
-                      setPreviouslySelected(item.name);
-                      item.onClick();
-                    }}
-                    className="block px-4 py-2  "
-                  >
+                  <button key={index} className="block px-4 py-2  ">
                     {item.name}
                   </button>
                 </li>
               ))}
             </ul>
             <ul className="flex flex-col">
-              <li className="flex h-16 w-full border-b border-[#868DA0] text-gray-600 hover:bg-[#FFB701] hover:text-[#560303]">
-                <button
-                  className="block px-4 py-2 "
-                  onClick={async () => {
-                    await router.push("admin-panel");
-                  }}
-                >
-                  Login
-                </button>
+              <li
+                className="flex h-16 w-full cursor-pointer border-b border-[#868DA0] text-gray-600 hover:bg-[#FFB701] hover:text-[#560303]"
+                onClick={async () => {
+                  await router.push("admin-panel");
+                }}
+                onMouseEnter={() => {
+                  setPreviouslySelected("");
+                }}
+              >
+                <button className="block px-4 py-2 ">Login</button>
               </li>
             </ul>
           </nav>
