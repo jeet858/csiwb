@@ -43,3 +43,9 @@
   background-position: center;
   transition: background-image 1s ease; /* Smooth transition */
 }
+.admin-bg {
+  background-image: url("../../images/Admin panel_bg.png");
+  background-size: cover; /* This will make the background cover the entire area */
+  background-repeat: no-repeat; /* This will prevent the image from repeating */
+  background-position: center; /* This will center the background image */
+}

@@ -32,15 +32,12 @@ const Header: React.FunctionComponent<HeaderProps> = ({
     { name: "Contact Us", onClick: onContactUsClick },
   ];
   const router = useRouter();
-  // const handelMenu = () => {
-  //   setMenu(!menu);
-  // };
 
   return (
     <header className="absolute z-10 flex h-20 w-full items-center justify-center bg-[#FFFF]">
       <div className="m-[1%] flex w-full justify-between">
         <Image src={logo} alt="CSI West Bengal" className="h-16 w-16" />
-        <span className="font-sansita self-center  text-xl font-bold text-[#6B2323] md:mr-5">
+        <span className="self-center font-sansita  text-xl font-bold text-[#6B2323] md:mr-5">
           CSI West Bengal
         </span>
 

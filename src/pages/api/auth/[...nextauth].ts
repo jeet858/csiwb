@@ -55,7 +55,7 @@ const authOptions: AuthOptions = {
 
   pages: {
     signIn: "/admin-panel",
-    error: "/",
+    signOut: "/",
   },
 };
 
