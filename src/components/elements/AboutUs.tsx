@@ -58,7 +58,7 @@ const AboutUs: React.FunctionComponent<AboutUsProps> = ({ themeColor }) => {
             this celebration of bonhomie and academic feast. We will leave no
             stone unturned to make this a memorable occasion.
           </p> */}
-          <p className="mb-6 text-center">
+          <p className="mb-6">
             It is well known now that the Cardiological Society of India was
             conceived in a dramatic fashion during a 12-hour train ride in 1946
             and revealed itself as the first cardiological body in Asia on 4th
@@ -66,7 +66,7 @@ const AboutUs: React.FunctionComponent<AboutUsProps> = ({ themeColor }) => {
             American College of Cardiology, with none other than Dr. Bidhan
             Chandra Roy at the helm of affairs.
           </p>
-          <p className="mb-6 text-center">
+          <p className="mb-6">
             Advancement of scientific knowledge and research in relation to the
             Cardiovascular system in all its aspects to improve our basic
             understanding and to find better preventive measures and treatment

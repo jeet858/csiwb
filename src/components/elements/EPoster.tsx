@@ -59,7 +59,7 @@ const SubmitPoster: React.FunctionComponent = () => {
       </div>
       <Button
         onClick={handleOpen}
-        className="w-60 self-center rounded-md bg-[#5F0404] py-2 font-semibold text-white hover:bg-[#280101]"
+        className="flex w-60 justify-center self-center rounded-md bg-[#5F0404] py-2 font-lato font-semibold text-white hover:bg-[#280101]"
       >
         <FiUpload className="mr-2 h-6 w-6 text-white" />
         Upload Poster

@@ -11,7 +11,10 @@ const OrganizingCommitteeText: React.FunctionComponent = () => {
     }
   };
   return (
-    <div className="w-screen p-8 text-center font-lato" ref={ref}>
+    <div
+      className="flex w-screen flex-col justify-center px-2 py-8 font-lato"
+      ref={ref}
+    >
       {expandedView ? (
         <div className="flex w-full flex-col">
           {/* <p className="mt-4 text-[#0E204E]">
@@ -133,7 +136,7 @@ const OrganizingCommitteeText: React.FunctionComponent = () => {
             for construction of CSI-Head Quarters Building, currently located in
             Kankurgachi, Kolkata which also houses CSI-WB Office.
           </p>
-          <div className="font-sansita flex h-fit w-full flex-col items-center text-2xl">
+          <div className="flex h-fit w-full flex-col items-center font-sansita text-2xl">
             <p className="mt-4 text-[#8A0406]">MAJOR</p>
             <p className="text-[#E06F46]">EVENTS</p>
             <Image alt="" src={img} />
@@ -151,7 +154,7 @@ const OrganizingCommitteeText: React.FunctionComponent = () => {
       {expandedView ? (
         <div className="mt-4">
           <button
-            className="rounded bg-[#560303] px-4 py-2 text-white hover:bg-[#280101]"
+            className="self-center rounded bg-[#560303] px-4 py-2 text-white hover:bg-[#280101]"
             onClick={() => {
               setExpandedView(false);
               onReadLessClick();
@@ -163,7 +166,7 @@ const OrganizingCommitteeText: React.FunctionComponent = () => {
       ) : (
         <div className="mt-4">
           <button
-            className="rounded bg-[#560303] px-4 py-2 text-white hover:bg-[#280101]"
+            className="self-center rounded bg-[#560303] px-4 py-2 text-white hover:bg-[#280101]"
             onClick={() => {
               setExpandedView(true);
             }}
