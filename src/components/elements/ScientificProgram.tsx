@@ -62,7 +62,7 @@ const ScientificProgram: React.FunctionComponent<ScientificProgramProps> = ({
           <CarouselTextOnly
             items={itemsText}
             indicator={true}
-            autoPlay={false}
+            autoPlay={true}
             arrows={true}
             drag={true}
             indicatorColor="#7C0202"

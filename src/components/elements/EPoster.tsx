@@ -1,6 +1,9 @@
 import React from "react";
-import submitEPoster from "../../../images/eposter-heading.png";
+import b from "../../../images/Beach-House.jpeg";
+import eposterHeading from "../../../images/eposter-heading.png";
+import eposter from "../../../images/eposter.png";
 import Image from "next/image";
+import Carousel from "./Carousel";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import UploadPoster from "../form/UploadPoster";
@@ -13,6 +16,7 @@ const SubmitPoster: React.FunctionComponent = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const items = [{ img: eposter }, { img: eposter }];
   const [uploadSuccess, setUploadSuccess] = React.useState(false);
 
   const [uploadFailed, setUploadFailed] = React.useState(false);
@@ -31,20 +35,31 @@ const SubmitPoster: React.FunctionComponent = () => {
   };
   return (
     <div className="flex w-full flex-col bg-white py-6">
-      <div className="flex flex-col gap-y-6">
-        <Image
-          src={submitEPoster}
-          alt="Submit E-Poster"
-          className="self-center"
-        />
-        <Button
-          onClick={handleOpen}
-          className="flex w-60 justify-center self-center rounded-md bg-[#5F0404] py-2 font-lato font-semibold text-white hover:bg-[#280101]"
-        >
-          <FiUpload className="mr-2 h-6 w-6 text-white" />
-          Upload Poster
-        </Button>
+      <Image
+        src={eposterHeading}
+        alt="Submit E-Poster"
+        className="self-center"
+      />
+
+      <div className="eposter-bg my-12 flex  h-fit w-full items-center justify-center pt-8 ">
+        <div className="flex h-fit w-4/5">
+          <Carousel
+            items={items}
+            arrows={false}
+            autoPlay={false}
+            indicator={false}
+            indicatorColor="#FFFFFF"
+            className="pb-4"
+          />
+        </div>
       </div>
+      <Button
+        onClick={handleOpen}
+        className="w-60 self-center rounded-md bg-[#5F0404] py-2 font-semibold text-white hover:bg-[#280101]"
+      >
+        <FiUpload className="mr-2 h-6 w-6 text-white" />
+        Upload Poster
+      </Button>
       <Modal
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
