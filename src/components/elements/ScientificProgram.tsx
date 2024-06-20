@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CarouselTextOnly from "./CarouselTextOnly";
+import { FiDownload } from "react-icons/fi";
 interface ScientificProgramProps {
   themeColor: string;
 }
@@ -74,7 +75,8 @@ const ScientificProgram: React.FunctionComponent<ScientificProgramProps> = ({
         download
         className="h-fit w-fit"
       >
-        <button className="rounded bg-[#560303] px-4 py-2 font-lato text-white hover:bg-[#280101]">
+        <button className="flex items-center rounded bg-[#560303] px-4 py-2 font-lato text-white hover:bg-[#280101]">
+          <FiDownload className="mr-2 h-6 w-6 text-white" />
           Download Brochure
         </button>
       </a>
