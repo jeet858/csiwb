@@ -6,7 +6,7 @@ import { FaAngleRight } from "react-icons/fa6";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 interface CarouselProps {
-  items: { text: string; themeColor?: string }[];
+  items: { text: string; themeColor?: string; speaker: string }[];
   autoPlay: boolean;
   autoPlayInterval?: number;
   indicator: boolean;
@@ -115,10 +115,15 @@ const CarouselTextOnly: React.FunctionComponent<CarouselProps> = ({
                 key={index}
               >
                 <div
-                  className={` relative top-[-60px]  mt-40 w-[200px]  self-center font-lato text-xl text-white`}
+                  className={` relative top-[-60px]  mt-40 flex h-fit w-screen  flex-col items-center justify-center gap-y-4 self-center font-lato text-xl text-white`}
                   style={{ wordWrap: "break-word", whiteSpace: "normal" }}
                 >
-                  {item.text}
+                  <p className="flex w-4/5 max-w-[400px] flex-wrap items-center justify-center">
+                    Program: {item.text}
+                  </p>
+                  <p className="flex w-4/5 items-center justify-center">
+                    Speaker: {item.speaker}
+                  </p>
                 </div>
               </div>
             ))}

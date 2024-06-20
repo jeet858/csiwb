@@ -7,12 +7,35 @@ const ScientificProgram: React.FunctionComponent<ScientificProgramProps> = ({
   themeColor,
 }) => {
   const itemsText = [
-    { text: "Practice-oriented Case Discussions" },
-    { text: "Didactic talks on Contemporary Topics" },
-    { text: "Cardiology Quiz with Prizes" },
-    { text: "CD Presentation on Challenging Cases" },
-    { text: "Competitive CD and Poster Presentations by PDTs" },
-    { text: "National Panel Discussion on NCD" },
+    {
+      text: "Preventing ASCVD throughout the Life-course - From the Heart to the Population",
+      speaker: "Prof. Kaushik Ray",
+    },
+    {
+      text: "Are we putting Indian ASCVD Patients at Higher Risk for CV Events if we follow American or European Lipid",
+      speaker: "Dr Raman Puri",
+    },
+    {
+      text: "Left Main Disease - When to and not to Stent",
+      speaker: "Dr Sunip Banerjee",
+    },
+    {
+      text: "Assessment of Myocardial Viability- When & How?",
+      speaker: "Dr Priya Jagia",
+    },
+    {
+      text: "Management of Obesity in Cardiometabolic Disease",
+      speaker: "Dr V.K. Katyal",
+    },
+    { text: "CV Imaging", speaker: "Dr G. N. Mohapatra" },
+    { text: "Upcoming Treatment in Lipidology", speaker: "Dr Sandip Bansal" },
+    {
+      text: "Contemporary Approach to Patient with Chest Pain",
+      speaker: "Dr Debabrata Mukherjee",
+    },
+    { text: "Antiplatelet Controversy", speaker: "Dr P.P. Mohanan" },
+    { text: "CTO Update", speaker: "Dr Anil Dhall" },
+    { text: "STEMI CARE- Where are we in 2024", speaker: "Dr Sundeep Mishra" },
   ];
 
   const [backgroundImage, setBackgroundImage] = useState<string>("slider-bg");
@@ -33,17 +56,28 @@ const ScientificProgram: React.FunctionComponent<ScientificProgramProps> = ({
   //   setTimeout(intervalId, 5000);
   // }, []);
   return (
-    <div className="mb-8 flex flex-col text-center">
-      <div className={`${backgroundImage} flex h-[909px] w-full`}>
-        <CarouselTextOnly
-          items={itemsText}
-          indicator={true}
-          autoPlay={true}
-          arrows={true}
-          drag={true}
-          indicatorColor="#7C0202"
-        />
+    <div className="flex h-fit w-full flex-col items-center justify-center">
+      <div className="mb-8 flex flex-col text-center">
+        <div className={`${backgroundImage} flex h-[909px] w-full`}>
+          <CarouselTextOnly
+            items={itemsText}
+            indicator={true}
+            autoPlay={false}
+            arrows={true}
+            drag={true}
+            indicatorColor="#7C0202"
+          />
+        </div>
       </div>
+      <a
+        href="/Scientific Program - 75 Years of CSI - A Tribute from CSI WB.pdf"
+        download
+        className="h-fit w-fit"
+      >
+        <button className="rounded bg-[#560303] px-4 py-2 font-lato text-white hover:bg-[#280101]">
+          Download Brochure
+        </button>
+      </a>
     </div>
   );
 };

@@ -15,6 +15,7 @@ interface CarouselProps {
   arrows: boolean;
   drag?: boolean;
   indicatorColor: string;
+  className?: string;
   onCurrentItemChange?: (themeColor: string) => void; //this prop returns themecolor of the current item which is in display
 }
 
@@ -27,6 +28,7 @@ const Carousel: React.FC<CarouselProps> = ({
   drag = true,
   indicatorColor,
   onCurrentItemChange,
+  className,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -115,7 +117,7 @@ const Carousel: React.FC<CarouselProps> = ({
               key={index}
               src={item.img}
               alt=""
-              className={`${index === currentIndex ? "animate-fade" : ""} flex h-full min-w-full items-center justify-center self-center `}
+              className={`${index === currentIndex ? "animate-fade" : ""} flex h-full min-w-full items-center justify-center self-center ${className}`}
             />
           ))}
         </div>

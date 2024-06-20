@@ -11,6 +11,7 @@ interface HeaderProps {
   onSubmitEposterClick: () => void;
   onUpdatesClick: () => void;
   onContactUsClick: () => void;
+  onGalleryClick: () => void;
 }
 const Header: React.FunctionComponent<HeaderProps> = ({
   onAboutUsClick,
@@ -19,6 +20,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
   onSubmitEposterClick,
   onUpdatesClick,
   onContactUsClick,
+  onGalleryClick,
 }) => {
   const [menu, setMenu] = useState(false);
   const [previouslySelected, setPreviouslySelected] = useState("");
@@ -27,6 +29,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
     { name: "About Us", onClick: onAboutUsClick },
     { name: "Scientific Program", onClick: onScientificProgramClick },
     { name: "Our Members", onClick: onOurMembersClick },
+    { name: "Highlights", onClick: onGalleryClick },
     { name: "Submit E-Poster", onClick: onSubmitEposterClick },
     { name: "Updates", onClick: onUpdatesClick },
     { name: "Contact Us", onClick: onContactUsClick },

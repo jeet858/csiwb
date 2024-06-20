@@ -4,6 +4,7 @@ import Banner from "~/components/elements/Banner";
 import Carousel from "~/components/elements/Carousel";
 import EPoster from "~/components/elements/EPoster";
 import Footer from "~/components/elements/Footer";
+import Gallery from "~/components/elements/Gallery";
 import Header from "~/components/elements/Header";
 import OrganizingCommittee from "~/components/elements/OrganizingCommittee";
 import OrganizingCommitteeText from "~/components/elements/OrganizingCommitteeText";
@@ -23,6 +24,7 @@ const index = () => {
   const ePosterRef = useRef<HTMLDivElement | null>(null);
   const updatesRef = useRef<HTMLDivElement | null>(null);
   const contactUsRef = useRef<HTMLDivElement | null>(null);
+  const galleryRef = useRef<HTMLDivElement | null>(null);
 
   const handleHeaderOnClick = (
     ref: React.RefObject<HTMLDivElement>,
@@ -61,6 +63,9 @@ const index = () => {
           onContactUsClick={() => {
             handleHeaderOnClick(contactUsRef, 0);
           }}
+          onGalleryClick={() => {
+            handleHeaderOnClick(galleryRef, 0);
+          }}
         />
         <div className="z-0 mt-20 flex w-full flex-col">
           <Banner
@@ -86,6 +91,12 @@ const index = () => {
             <OrganizingCommittee />
           </div>
           <OrganizingCommitteeText />
+          <div
+            className="flex flex-wrap items-center justify-center"
+            ref={galleryRef}
+          >
+            <Gallery />
+          </div>
           <div
             className="flex flex-wrap items-center justify-center"
             ref={ePosterRef}
