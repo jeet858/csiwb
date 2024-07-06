@@ -20,6 +20,19 @@ const Footer: React.FunctionComponent = () => {
         <div className="mb-6 border-t  pt-4 text-center">
           <p>&copy; 2024 CSI of West Bengal, All Rights Reserved.</p>
         </div>
+        <div className="mb-4 border-t  pt-4 text-center text-xs">
+          Managed and Developed by -{" "}
+          <a href="https://mindsstar.com/" target="_blank">
+            MindStar Technologies Pvt. Ltd.
+          </a>
+        </div>
+        {/* <a
+          className="mb-4 border-t  pt-4 text-center text-xs"
+          href="https://mindsstar.com/"
+          target="_blank"
+        >
+          Managed and Developed by - MindStar Technologies Pvt. Ltd.
+        </a> */}
       </div>
     </footer>
   );
